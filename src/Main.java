@@ -1,7 +1,9 @@
+import Model.CompararNombreLong;
 import Model.FakerUtils;
 import Model.Persona;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,7 +11,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Persona> personas = generarPersonas(100);
-
+        System.out.println(personas);
+        personas.sort(new CompararNombreLong());
         System.out.println(personas);
     }
 
