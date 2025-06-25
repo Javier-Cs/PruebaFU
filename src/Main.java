@@ -12,7 +12,16 @@ public class Main {
     public static void main(String[] args) {
         List<Persona> personas = generarPersonas(100);
         System.out.println(personas);
-        personas.sort(new CompararNombreLong());
+        //la implementación de una clase anonima se la representa como una instancia
+        personas.sort(new Comparator<Persona>() {
+            @Override
+            public int compare(Persona o1, Persona o2) {
+                int primero =o1.getNombre().length();
+                int segundo =o2.getNombre().length();
+                // cambio de la condicional If por el metodo Compare de la clase Integer
+                return Integer.compare(primero,segundo);
+            }
+        });
         System.out.println(personas);
     }
 

@@ -8,11 +8,13 @@ public class CompararNombreLong implements Comparator<Persona> {
         int primero =o1.getNombre().length();
         int segundo =o2.getNombre().length();
 
-        if(primero>segundo){
-            return 1;
-        }else  if(primero<segundo){
-            return -1;
-        }
-        return 0;
+        return Integer.compare(primero,segundo);
+
+//        if(primero>segundo){
+//            return 1;
+//        }else  if(primero<segundo){
+//            return -1;
+//        }
+//        return 0;
     }
 }
