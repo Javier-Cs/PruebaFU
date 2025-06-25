@@ -13,15 +13,7 @@ public class Main {
         List<Persona> personas = generarPersonas(100);
         System.out.println(personas);
         //la implementación de una clase anonima se la representa como una instancia
-        personas.sort(new Comparator<Persona>() {
-            @Override
-            public int compare(Persona o1, Persona o2) {
-                int primero =o1.getNombre().length();
-                int segundo =o2.getNombre().length();
-                // cambio de la condicional If por el metodo Compare de la clase Integer
-                return Integer.compare(primero,segundo);
-            }
-        });
+        personas.sort((o1, o2) -> Integer.compare(o1.getNombre().length(), o2.getNombre().length()));
         System.out.println(personas);
     }
 
