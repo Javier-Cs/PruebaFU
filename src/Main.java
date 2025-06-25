@@ -1,3 +1,4 @@
+import Ejemplo2.Operaciones;
 import Ejemplo2.Opercion;
 import Model.CompararNombreLong;
 import Model.FakerUtils;
@@ -11,12 +12,27 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Opercion op =  new Opercion();
 
-        System.out.println(op.suma(1,1));
-        System.out.println(op.resta(1,1));
-        System.out.println(op.multiplicacion(1,1));
-        System.out.println(op.division(4,2));
+        Operaciones suma = (a, b) -> a + b;
+        Operaciones multi = (a, b) -> a * b;
+        Operaciones divide = (a, b) -> a / b;
+        Operaciones subtract = (a, b) -> a - b;
+
+        System.out.println(suma.apply(1, 2));
+        System.out.println(multi.apply(1, 2));
+        System.out.println(divide.apply(1, 2));
+        System.out.println(subtract.apply(1, 2));
+
+//        Opercion op =  new Opercion();
+//        System.out.println(op.suma(1,1));
+//        System.out.println(op.resta(1,1));
+//        System.out.println(op.multiplicacion(1,1));
+//        System.out.println(op.division(4,2));
+    }
+
+    public static double opera(double a, double b, Operaciones op) {
+        return op.apply(a, b);
+
     }
 }
 
