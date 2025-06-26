@@ -1,6 +1,6 @@
 package Ejemplo2;
 
 @FunctionalInterface
-public interface Operaciones {
-    double apply(double a, double b);
+public interface Operaciones<T> {
+    T apply(T a, T b);
 }

@@ -13,15 +13,19 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Operaciones suma = (a, b) -> a + b;
-        Operaciones multi = (a, b) -> a * b;
-        Operaciones divide = (a, b) -> a / b;
-        Operaciones subtract = (a, b) -> a - b;
 
-        System.out.println(suma.apply(1, 2));
-        System.out.println(multi.apply(1, 2));
-        System.out.println(divide.apply(1, 2));
-        System.out.println(subtract.apply(1, 2));
+        System.out.println(opera(1,1,(a,b) -> a + b));
+        System.out.println(opera(1,1, (a,b) -> a - b));
+
+//        Operaciones suma = (a, b) -> a + b;
+//        Operaciones multi = (a, b) -> a * b;
+//        Operaciones divide = (a, b) -> a / b;
+//        Operaciones subtract = (a, b) -> a - b;
+//
+//        System.out.println(suma.apply(1, 2));
+//        System.out.println(multi.apply(1, 2));
+//        System.out.println(divide.apply(1, 2));
+//        System.out.println(subtract.apply(1, 2));
 
 //        Opercion op =  new Opercion();
 //        System.out.println(op.suma(1,1));
@@ -30,7 +34,7 @@ public class Main {
 //        System.out.println(op.division(4,2));
     }
 
-    public static double opera(double a, double b, Operaciones op) {
+    public static <T extends Number> T opera(T a, T b, Operaciones<T> op) {
         return op.apply(a, b);
 
     }
